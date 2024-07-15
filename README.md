@@ -5,6 +5,11 @@
 
 A GenAI-powered Kubetools Recommender system for your Kubernetes cluster. 
 
+<img src="https://github.com/kubetoolsca/krs/assets/313480/5da391ba-6b15-4010-8bc7-404978bef1e7" width="400">
+
+
+
+
 # Table of Contents
 
 - [Kubetools Recommender System](#kubetools-recommender-system)
@@ -20,13 +25,14 @@ A GenAI-powered Kubetools Recommender system for your Kubernetes cluster.
 - [Kubetools Recommender System](#kubetools-recommender-system-1)
 - [Krs health](#krs-health)
   - [Using OpenAI](#using-openai)
-  - [Using Hugging Face](#using-hugging-face)# Kubetools Recommender System
+  - [Using Hugging Face](#using-hugging-face) 
+- [FAQs](#faqs)
 
 
 
 The main functionalities of the project include:
 
-<img width="1499" alt="image" src="https://github.com/kubetoolsca/krs/assets/313480/14fa0beb-2203-4ab4-b34b-d90888584177">
+<img width="1499" alt="image" src="arch.png">
 
 
 - **Scanning the Kubernetes cluster**: The tool scans the cluster to identify the deployed pods, services, and deployments. It retrieves information about the tools used in the cluster and their rankings.
@@ -43,7 +49,7 @@ It also utilizes a language model (LLM) for the health check feature.
 The project's directory structure and package management are managed using requirements.txt. 
 The project's data, such as tool rankings, CNCF status, and Kubernetes cluster information, are stored in JSON files and pickled files.
 
-<img width="300" alt="image" src="https://github.com/KrsGPTs/krs/assets/313480/ea071bb8-1282-4b06-8bb6-01f082e4cce0">
+<img width="299" alt="image" src="bhive.png">
 
 
 ## Prerequisites:
@@ -55,9 +61,12 @@ Note: If the kube config path for your cluster is not the default *(~/.kube/conf
 
 ## Tested Environment
 
-- Docker Desktop(Mac, Linux and Windows)
-- Minikube
+- [Docker Desktop(Mac, Linux and Windows)](https://github.com/kubetoolsca/krs?tab=readme-ov-file#getting-started)
+- [Minikube](https://github.com/kubetoolsca/krs/blob/main/mkc.md)
 - [Google Kubernetes Engine](https://github.com/kubetoolsca/krs/blob/main/gke.md)
+- [Amazon Elastic Kubernetes Service](eks.md)
+- [Azure Kubernetes Service](aks.md)
+- [DigitalOcean Kubernetes Cluster](dokc.md)
 
 
 ## Getting Started
@@ -415,6 +424,16 @@ To run the krs health command and test it with different options for change_mode
 ```
 krs health --change-model  --device gpu
 ```
+
+## FAQs
+
+<details>
+<summary> How safe is Krs for Prod environment</summary>
+
+The tool is designed to be a non-invasive tool that provides insights into the current state of a Kubernetes cluster without making any changes to the cluster itself. It does not store any sensitive data or credentials, and it only retrieves information from the cluster and external data sources.
+</details>
+
+
 
 ## Community
 Find us on [Slack](https://www.launchpass.com/kubetoolsio)
